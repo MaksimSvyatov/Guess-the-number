@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UITextField!
     override func viewDidLoad() {
     super.viewDidLoad()
-        
+    startNewGame()
     }
     
-    let targetRandomValue = Int.random(in: 1...100)
+    var targetRandomValue = 0
     var currentValue = 0
     
     @IBAction func getCurrentValue() {
@@ -30,6 +30,7 @@ func showCheckLabelAlert() {
         
         if difference == 0 {
             title = "Perfect!"
+            startNewGame()
         } else if currentValue > targetRandomValue {
             title = "Много!"
         } else if currentValue < targetRandomValue {
@@ -42,6 +43,12 @@ func showCheckLabelAlert() {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
         
+    }
+    
+    func startNewGame() -> Int {
+        targetRandomValue = Int.random(in: 1...100)
+        print(targetRandomValue)
+        return targetRandomValue
     }
 
 }
