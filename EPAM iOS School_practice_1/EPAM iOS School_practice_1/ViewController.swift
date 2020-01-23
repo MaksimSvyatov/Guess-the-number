@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     @IBAction func getCurrentValue() {
         currentValue = Int(label.text!)!
         showCheckLabelAlert()
-        print(currentValue)
     }
     
 func showCheckLabelAlert() {
@@ -47,7 +46,6 @@ func showCheckLabelAlert() {
     
     func startNewGame() -> Int {
         targetRandomValue = Int.random(in: 1...100)
-        print(targetRandomValue)
         return targetRandomValue
     }
 
