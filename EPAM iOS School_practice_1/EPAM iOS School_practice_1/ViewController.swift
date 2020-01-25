@@ -11,9 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var label: UITextField!
+    
     override func viewDidLoad() {
-    super.viewDidLoad()
-    startNewGame()
+        super.viewDidLoad()
+        startNewGame()
     }
     
     var targetRandomValue = 0
@@ -24,7 +25,8 @@ class ViewController: UIViewController {
         showCheckLabelAlert()
     }
     
-func showCheckLabelAlert() {
+    func showCheckLabelAlert() {
+        
         let difference = abs(currentValue - targetRandomValue)
         
         if difference == 0 {
@@ -41,12 +43,9 @@ func showCheckLabelAlert() {
         let action = UIAlertAction(title: "Ok!", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        
     }
     
-    func startNewGame() -> Int {
+    func startNewGame() {
         targetRandomValue = Int.random(in: 1...100)
-        return targetRandomValue
     }
-
 }
