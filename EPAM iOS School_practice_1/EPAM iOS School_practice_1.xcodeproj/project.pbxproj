@@ -13,6 +13,7 @@
 		943DF4F323D82C9E00A701B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943DF4F123D82C9E00A701B8 /* Main.storyboard */; };
 		943DF4F523D82C9F00A701B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943DF4F423D82C9F00A701B8 /* Assets.xcassets */; };
 		943DF4F823D82C9F00A701B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943DF4F623D82C9F00A701B8 /* LaunchScreen.storyboard */; };
+		9459E4C823DDDC3A00EE6C38 /* RussianLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9459E4C723DDDC3A00EE6C38 /* RussianLanguageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		943DF4F423D82C9F00A701B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		943DF4F723D82C9F00A701B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		943DF4F923D82C9F00A701B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9459E4C723DDDC3A00EE6C38 /* RussianLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RussianLanguageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				943DF4EB23D82C9E00A701B8 /* AppDelegate.swift */,
 				943DF4ED23D82C9E00A701B8 /* SceneDelegate.swift */,
 				943DF4EF23D82C9E00A701B8 /* ViewController.swift */,
+				9459E4C723DDDC3A00EE6C38 /* RussianLanguageViewController.swift */,
 				943DF4F123D82C9E00A701B8 /* Main.storyboard */,
 				943DF4F423D82C9F00A701B8 /* Assets.xcassets */,
 				943DF4F623D82C9F00A701B8 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				943DF4F023D82C9E00A701B8 /* ViewController.swift in Sources */,
 				943DF4EC23D82C9E00A701B8 /* AppDelegate.swift in Sources */,
+				9459E4C823DDDC3A00EE6C38 /* RussianLanguageViewController.swift in Sources */,
 				943DF4EE23D82C9E00A701B8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
