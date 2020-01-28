@@ -21,7 +21,16 @@ class ViewController: UIViewController {
     var currentValue = 0
     
     @IBAction func getCurrentValue() {
-        currentValue = Int(label.text!)!
+
+        if label.text != nil {
+            currentValue = Int(label.text!)!
+        } else{
+            let alert = UIAlertController(title: "Ошибка", message: "Строка должна содержать число!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok!", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+        
         showCheckLabelAlert()
     }
     
@@ -38,7 +47,6 @@ class ViewController: UIViewController {
             title = "Мало!"
         }
         
-        
         let alert = UIAlertController(title: title, message: "Я попробую ещё раз!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok!", style: .default, handler: nil)
         alert.addAction(action)
@@ -46,6 +54,7 @@ class ViewController: UIViewController {
     }
     
     func startNewGame() {
+        
         targetRandomValue = Int.random(in: 1...100)
     }
 }
