@@ -35,9 +35,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8J-sA-Mfd">
-                                <rect key="frame" x="267" y="354" width="75" height="30"/>
+                                <rect key="frame" x="263" y="354" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Проверит!"/>
+                                <state key="normal" title="Проверить!"/>
                                 <connections>
                                     <action selector="getCurrentValue" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zx9-PL-wgD"/>
                                 </connections>
