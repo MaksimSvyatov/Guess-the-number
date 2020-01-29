@@ -22,9 +22,11 @@ class ViewController: UIViewController {
     
     @IBAction func getCurrentValue() {
 
-        if label.text != nil {
-            currentValue = Int(label.text!)!
-        } else{
+        if let text = label.text, let number = Int(text) {
+
+        currentValue = number
+            
+        } else {
             let alert = UIAlertController(title: "Ошибка", message: "Строка должна содержать число!", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok!", style: .default, handler: nil)
             alert.addAction(action)
@@ -32,6 +34,7 @@ class ViewController: UIViewController {
         }
         
         showCheckLabelAlert()
+        
     }
     
     func showCheckLabelAlert() {
