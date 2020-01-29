@@ -13,9 +13,11 @@ class ViewController: UIViewController {
     var targetRandomValue = 0
     var currentValue = 0
     var round = 0
+    var games = 0
     
     @IBOutlet weak var label: UITextField!
     @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var gameslabel: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +25,25 @@ class ViewController: UIViewController {
         startNewRound()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationStatViewController = segue.destination as? StatisticViewController else { return }
+        destinationStatViewController.gamesValue = String(games)
+    }
+    
     @IBAction func getCurrentValue() {
-        currentValue = Int(label.text!)!
+        if let text = label.text, let number = Int(text) {
+
+        currentValue = number
+            
+        } else {
+            let alert = UIAlertController(title: "Ошибка", message: "Строка должна содержать число!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok!", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+        
         showCheckLabelAlert()
-        roundLabel.text = String(round)
+        
     }
     
     func showCheckLabelAlert() {
@@ -54,6 +71,8 @@ class ViewController: UIViewController {
     func startNewGame() {
         targetRandomValue = Int.random(in: 1...100)
         round = 0
+        games += 1
+        gameslabel.text = String(games)
     }
     
     func startNewRound() {

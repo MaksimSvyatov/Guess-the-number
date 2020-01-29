@@ -13,6 +13,7 @@
 		943DF4F323D82C9E00A701B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943DF4F123D82C9E00A701B8 /* Main.storyboard */; };
 		943DF4F523D82C9F00A701B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943DF4F423D82C9F00A701B8 /* Assets.xcassets */; };
 		943DF4F823D82C9F00A701B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943DF4F623D82C9F00A701B8 /* LaunchScreen.storyboard */; };
+		943ECF3C23E1844500B43222 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943ECF3B23E1844500B43222 /* StatisticViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		943DF4EF23D82C9E00A701B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		943DF4F423D82C9F00A701B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		943DF4F923D82C9F00A701B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		943ECF3B23E1844500B43222 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				943DF4EB23D82C9E00A701B8 /* AppDelegate.swift */,
 				943DF4ED23D82C9E00A701B8 /* SceneDelegate.swift */,
 				943DF4EF23D82C9E00A701B8 /* ViewController.swift */,
+				943ECF3B23E1844500B43222 /* StatisticViewController.swift */,
 				943DF4F123D82C9E00A701B8 /* Main.storyboard */,
 				943DF4F423D82C9F00A701B8 /* Assets.xcassets */,
 				943DF4F623D82C9F00A701B8 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 				943DF4F023D82C9E00A701B8 /* ViewController.swift in Sources */,
 				943DF4EC23D82C9E00A701B8 /* AppDelegate.swift in Sources */,
 				943DF4EE23D82C9E00A701B8 /* SceneDelegate.swift in Sources */,
+				943ECF3C23E1844500B43222 /* StatisticViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
