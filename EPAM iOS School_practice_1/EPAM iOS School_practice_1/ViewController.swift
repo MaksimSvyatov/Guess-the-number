@@ -8,16 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol ViewControllerDelegate: class {
+    func update(minNumber: Int, maxNumber: Int)
+}
 
+class ViewController: UIViewController, ViewControllerDelegate {
+    
     var targetRandomValue = 0
     var currentValue = 0
     var round = 0
     var games = 0
+    var minNumber = 0
+    var maxNumber = 0
     
     @IBOutlet weak var label: UITextField!
     @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var gameslabel: UITextField!
+    @IBOutlet weak var randomizeFromTextField: UITextField!
+    @IBOutlet weak var randomizeToTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +33,20 @@ class ViewController: UIViewController {
         startNewRound()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destinationStatViewController = segue.destination as? StatisticViewController else { return }
-        destinationStatViewController.gamesValue = String(games)
+    func update(minNumber: Int, maxNumber: Int) {
+        self.minNumber = minNumber
+        self.maxNumber = maxNumber
+        print(minNumber, maxNumber)
     }
     
+    func startNewGame() {
+        targetRandomValue = Int.random(in: minNumber...maxNumber)
+        //print(minNumber, maxNumber, targetRandomValue)
+        round = 0
+        games += 1
+        gameslabel.text = String(games)
+    }
+
     @IBAction func getCurrentValue() {
         if let text = label.text, let number = Int(text) {
 
@@ -43,7 +60,6 @@ class ViewController: UIViewController {
         }
         
         showCheckLabelAlert()
-        
     }
     
     func showCheckLabelAlert() {
@@ -68,15 +84,63 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func startNewGame() {
-        targetRandomValue = Int.random(in: 1...100)
-        round = 0
-        games += 1
-        gameslabel.text = String(games)
-    }
-    
     func startNewRound() {
         round += 1
         roundLabel.text = String(round)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.identifier == "settingsSegue" {
+                   if let destinationController = segue.destination as? SettingsViewController {
+                       destinationController.minNumber = minNumber
+                       destinationController.maxNumber = maxNumber
+                       destinationController.delegate = self
+                   }
+               }
+    }
+    
 }
+
+
+
+
+// Добавить в основной код обязательно
+
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let destinationStatViewController = segue.destination as? StatisticViewController else { return }
+//        destinationStatViewController.gamesValue = String(games)
+//    }
+
+// --------;;;;;;--------
+
+
+
+
+//        if segue.identifier == "showStatisticSegue" {
+//            if let destinationController = segue.destination as? StatisticViewController {
+//                destinationController.gameCount = gameCount
+//                destinationController.stepCount = bestStepCount
+//            }
+//        }
+
+//    func userDidChooseFromNumber(data: Int) {
+//        randomizeFromTextField.text = String(data)
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "settingsSegue" {
+//            guard let SettingsViewController: SettingsViewController = segue.destination as? SettingsViewController else { return }
+//            SettingsViewController.delegate = self
+//        }
+        
+//        guard let destination = segue.destination as? SettingsViewController else { return }
+//        destination.delegate = self
+    
+    
+    
+      //  (randomFromNumber: String) {
+//           randomizeFromTextField.text = randomFromNumber
+//       }
+
+

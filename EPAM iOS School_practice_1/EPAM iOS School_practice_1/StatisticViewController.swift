@@ -11,6 +11,9 @@ import UIKit
 class StatisticViewController: UIViewController {
     
     @IBOutlet weak var gamesLabel: UITextField!
+    @IBOutlet weak var textLabel: UILabel!
+ 
+    
     
     var gamesValue = ""
     
@@ -22,5 +25,7 @@ class StatisticViewController: UIViewController {
     @IBAction func close() {
         dismiss(animated: true, completion: nil)
     }
+    
+    
 
 }
