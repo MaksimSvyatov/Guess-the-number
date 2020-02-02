@@ -17,18 +17,23 @@ class ViewController: UIViewController, ViewControllerDelegate {
     var targetRandomValue = 0
     var currentValue = 0
     var round = 0
-    var games = 0
+    var games = -1
     var minNumber = 0
     var maxNumber = 0
     
     @IBOutlet weak var label: UITextField!
     @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var gameslabel: UITextField!
-    @IBOutlet weak var randomizeFromTextField: UITextField!
-    @IBOutlet weak var randomizeToTextField: UITextField!
+    @IBOutlet weak var randomizeFromTextField: UILabel!
+    @IBOutlet weak var randomizeToTextField: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        games = -1
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         startNewGame()
         startNewRound()
     }
@@ -36,12 +41,12 @@ class ViewController: UIViewController, ViewControllerDelegate {
     func update(minNumber: Int, maxNumber: Int) {
         self.minNumber = minNumber
         self.maxNumber = maxNumber
-        print(minNumber, maxNumber)
     }
     
     func startNewGame() {
         targetRandomValue = Int.random(in: minNumber...maxNumber)
-        //print(minNumber, maxNumber, targetRandomValue)
+        randomizeFromTextField.text = String(minNumber)
+        randomizeToTextField.text = String(maxNumber)
         round = 0
         games += 1
         gameslabel.text = String(games)
@@ -49,7 +54,6 @@ class ViewController: UIViewController, ViewControllerDelegate {
 
     @IBAction func getCurrentValue() {
         if let text = label.text, let number = Int(text) {
-
         currentValue = number
             
         } else {
@@ -68,8 +72,10 @@ class ViewController: UIViewController, ViewControllerDelegate {
         
         if difference == 0 {
             title = "Perfect!"
-            startNewGame()
             startNewRound()
+            randomizeFromTextField.text = "0"
+            randomizeToTextField.text = "0"
+            label.text = ""
         } else if currentValue > targetRandomValue {
             title = "Много!"
             startNewRound()
@@ -90,57 +96,17 @@ class ViewController: UIViewController, ViewControllerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         if segue.identifier == "settingsSegue" {
-                   if let destinationController = segue.destination as? SettingsViewController {
-                       destinationController.minNumber = minNumber
-                       destinationController.maxNumber = maxNumber
-                       destinationController.delegate = self
-                   }
-               }
-    }
-    
-}
-
-
-
-
-// Добавить в основной код обязательно
-
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let destinationStatViewController = segue.destination as? StatisticViewController else { return }
-//        destinationStatViewController.gamesValue = String(games)
-//    }
-
-// --------;;;;;;--------
-
-
-
-
-//        if segue.identifier == "showStatisticSegue" {
-//            if let destinationController = segue.destination as? StatisticViewController {
-//                destinationController.gameCount = gameCount
-//                destinationController.stepCount = bestStepCount
-//            }
-//        }
-
-//    func userDidChooseFromNumber(data: Int) {
-//        randomizeFromTextField.text = String(data)
-//    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "settingsSegue" {
-//            guard let SettingsViewController: SettingsViewController = segue.destination as? SettingsViewController else { return }
-//            SettingsViewController.delegate = self
-//        }
+        if segue.identifier == "settingsSegue" {
+            if let destinationController = segue.destination as? SettingsViewController {
+                destinationController.minNumber = minNumber
+                destinationController.maxNumber = maxNumber
+                destinationController.delegate = self
+            }
+        }
         
-//        guard let destination = segue.destination as? SettingsViewController else { return }
-//        destination.delegate = self
-    
-    
-    
-      //  (randomFromNumber: String) {
-//           randomizeFromTextField.text = randomFromNumber
-//       }
-
-
+        if segue.identifier == "statisticsSegue" {
+            guard let destinationStatViewController = segue.destination as? StatisticViewController else { return }
+            destinationStatViewController.gamesValue = String(games)
+        }
+    }
+}

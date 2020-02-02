@@ -13,8 +13,6 @@ class StatisticViewController: UIViewController {
     @IBOutlet weak var gamesLabel: UITextField!
     @IBOutlet weak var textLabel: UILabel!
  
-    
-    
     var gamesValue = ""
     
     override func viewDidLoad() {
@@ -25,7 +23,4 @@ class StatisticViewController: UIViewController {
     @IBAction func close() {
         dismiss(animated: true, completion: nil)
     }
-    
-    
-
 }

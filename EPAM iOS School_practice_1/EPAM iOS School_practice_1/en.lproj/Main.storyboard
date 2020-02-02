@@ -90,18 +90,6 @@ Computer will randomize some number in interval, which you choose in "Settings" 
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lt8-XH-pxe">
-                                <rect key="frame" x="65" y="301" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2QD-A4-qcn">
-                                <rect key="frame" x="246" y="301" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your interval" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZM-D7-Csu">
                                 <rect key="frame" x="159" y="231" width="109" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -118,6 +106,20 @@ Computer will randomize some number in interval, which you choose in "Settings" 
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="To"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCR-JM-YXt">
+                                <rect key="frame" x="80" y="299" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAL-Wu-JSY">
+                                <rect key="frame" x="285" y="299" width="29" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -126,8 +128,8 @@ Computer will randomize some number in interval, which you choose in "Settings" 
                     <connections>
                         <outlet property="gameslabel" destination="wst-wJ-75R" id="IEZ-fA-fh5"/>
                         <outlet property="label" destination="ed2-iA-CSc" id="cyH-Ae-BjS"/>
-                        <outlet property="randomizeFromTextField" destination="lt8-XH-pxe" id="0VT-hw-ttS"/>
-                        <outlet property="randomizeToTextField" destination="2QD-A4-qcn" id="j6P-Xm-eoy"/>
+                        <outlet property="randomizeFromTextField" destination="LCR-JM-YXt" id="n53-SA-mvG"/>
+                        <outlet property="randomizeToTextField" destination="NAL-Wu-JSY" id="6id-as-O8g"/>
                         <outlet property="roundLabel" destination="ks0-Bi-jvs" id="OSr-8b-PFU"/>
                     </connections>
                 </viewController>
@@ -175,6 +177,9 @@ Computer will randomize some number in interval, which you choose in "Settings" 
                         <viewLayoutGuide key="safeArea" id="4QT-ro-s6U"/>
                     </view>
                     <navigationItem key="navigationItem" id="QpL-9w-jlg"/>
+                    <connections>
+                        <outlet property="gamesLabel" destination="JHR-3k-K6r" id="cjP-cI-FDY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoK-6n-tlC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,9 +188,9 @@ Computer will randomize some number in interval, which you choose in "Settings" 
         <!--Settings View Controller-->
         <scene sceneID="XR8-Yo-nxy">
             <objects>
-                <viewController id="rRg-E9-2wC" customClass="SettingsViewController" customModule="EPAM_iOS_School_practice_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="rRg-E9-2wC" customClass="SettingsViewController" customModule="EPAM_iOS_School_practice_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xua-jj-7Iq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Settings" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1U-ts-U7s">
@@ -213,20 +218,20 @@ Computer will randomize some number in interval, which you choose in "Settings" 
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V30-4A-uOe">
-                                <rect key="frame" x="213" y="326" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Close"/>
-                                <connections>
-                                    <action selector="close" destination="rRg-E9-2wC" eventType="touchUpInside" id="8EO-IT-lVZ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpj-av-sgb">
                                 <rect key="frame" x="159" y="225" width="101" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set"/>
                                 <connections>
                                     <action selector="saveNumberChange:" destination="rRg-E9-2wC" eventType="touchUpInside" id="OJz-gb-12i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V30-4A-uOe">
+                                <rect key="frame" x="190" y="324" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="close" destination="rRg-E9-2wC" eventType="touchUpInside" id="8EO-IT-lVZ"/>
                                 </connections>
                             </button>
                         </subviews>
